@@ -84,9 +84,8 @@ const Form = () => {
     if (value <= 0) {
       setSelected({ ...selected, no_of_slices: 0 });
     } else {
-    setSelected({ ...selected, no_of_slices: value });
+      setSelected({ ...selected, no_of_slices: value });
     }
-    
   };
 
   const HandlePizzaDiameter = (e) => {
@@ -94,7 +93,7 @@ const Form = () => {
     if (value <= 0) {
       setSelected({ ...selected, diameter: 0 });
     } else {
-    setSelected({ ...selected, diameter: value });
+      setSelected({ ...selected, diameter: value });
     }
   };
 
@@ -115,9 +114,8 @@ const Form = () => {
     if (value <= 0) {
       setSelected({ ...selected, slices_of_bread: 0 });
     } else {
-    setSelected({ ...selected, slices_of_bread: value });
+      setSelected({ ...selected, slices_of_bread: value });
     }
-    
   };
 
   const SendRequest = () => {
@@ -129,6 +127,8 @@ const Form = () => {
         })
         .then((data) => {
           alert(`PIZZA DATA REQUEST: ${JSON.stringify(data.data)}`);
+        }).catch((err) => {
+          alert("Please fill all fields correctly" + " " + err.message);
         });
     } else if (typeOfRequest === "sandwich") {
       axios
@@ -137,6 +137,8 @@ const Form = () => {
         })
         .then((data) => {
           alert(`SANDWICH DATA REQUEST: ${JSON.stringify(data.data)}`);
+        }).catch((err) => {
+          alert("Please fill all fields correctly" + " " + err.message);
         });
     } else {
       axios
@@ -145,6 +147,8 @@ const Form = () => {
         })
         .then((data) => {
           alert(`SOUP DATA REQUEST: ${JSON.stringify(data.data)}`);
+        }).catch((err) => {
+          alert("Please fill all fields correctly" + " -> " + err.message);
         });
     }
   };
