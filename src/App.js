@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Box from "@mui/material/Box";
+
+import Form from "./Components/Form/Form";
+import LocalPizzaRoundedIcon from "@mui/icons-material/LocalPizzaRounded";
+import FastfoodRoundedIcon from "@mui/icons-material/FastfoodRounded";
+import { Soup } from "./icons";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <center style={{ margin: "1rem 0 0 0" }}>
+        <Box
+          borderRadius={5}
+          component="div"
+          sx={{
+            p: 0.5,
+            border: "1px solid grey",
+            height: "auto",
+            width: "20rem",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <LocalPizzaRoundedIcon />
+          <FastfoodRoundedIcon />
+          {Soup}
+          <Form />
+        </Box>
+      </center>
+    </>
   );
 }
 
